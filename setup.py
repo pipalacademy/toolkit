@@ -19,9 +19,10 @@ def get_version():
 
 __version__ = get_version()
 
-install_requires = ['web.py', 'psycopg2-binary', 'pandas', 'pyYAML', 'click']
+install_requires = ['web.py', 'psycopg2-binary', 'pyYAML', 'click']
 extras_require = {
-    'all': ['requests']
+    'all': ['requests'],
+    'data': ['pandas']
 }
 
 setup(
