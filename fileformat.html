@@ -1,0 +1,291 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>File formatting &#8212; Toolkit 20.1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/nature.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Signals" href="signals.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="signals.html" title="Signals"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Toolkit 20.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">File formatting</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="module-toolkit.fileformat">
+<span id="file-formatting"></span><h1>File formatting<a class="headerlink" href="#module-toolkit.fileformat" title="Permalink to this heading">¶</a></h1>
+<section id="fileformat">
+<h2>fileformat<a class="headerlink" href="#fileformat" title="Permalink to this heading">¶</a></h2>
+<p>This module implements the FileFormat abstractions.</p>
+</section>
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.fileformat.ColumnFormat">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toolkit.fileformat.</span></span><span class="sig-name descname"><span class="pre">ColumnFormat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name:</span> <span class="pre">'str'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">label:</span> <span class="pre">'str'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">datatype:</span> <span class="pre">'Datatype'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description:</span> <span class="pre">'str'</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">required:</span> <span class="pre">'bool'</span> <span class="pre">=</span> <span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default:</span> <span class="pre">'Any'</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">regex:</span> <span class="pre">'str'</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">transform:</span> <span class="pre">'str'</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dateformat:</span> <span class="pre">'str'</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">unique:</span> <span class="pre">'bool'</span> <span class="pre">=</span> <span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options:</span> <span class="pre">'List[str]'</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">missing_values:</span> <span class="pre">'List[str]'</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params:</span> <span class="pre">'dict'</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.fileformat.ColumnFormat" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="toolkit.fileformat.ColumnFormat.process">
+<span class="sig-name descname"><span class="pre">process</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">column</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Series</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">report</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#toolkit.fileformat.FileFormatReport" title="toolkit.fileformat.FileFormatReport"><span class="pre">FileFormatReport</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Series</span></span></span><a class="headerlink" href="#toolkit.fileformat.ColumnFormat.process" title="Permalink to this definition">¶</a></dt>
+<dd><p>Process a column verifying the datatype, constraints and applying
+the transformations specified in this ColumnFormat.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.fileformat.Datatype">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toolkit.fileformat.</span></span><span class="sig-name descname"><span class="pre">Datatype</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.fileformat.Datatype" title="Permalink to this definition">¶</a></dt>
+<dd><p>An enumeration.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.fileformat.DatatypeProcessor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toolkit.fileformat.</span></span><span class="sig-name descname"><span class="pre">DatatypeProcessor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datatype</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#toolkit.fileformat.Datatype" title="toolkit.fileformat.Datatype"><span class="pre">Datatype</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">dateformat</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Optional</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.fileformat.DatatypeProcessor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Processor to convert the input column of strings into the required type.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.fileformat.DatatypeProcessor.convert_dateformat">
+<span class="sig-name descname"><span class="pre">convert_dateformat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dateformat</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.fileformat.DatatypeProcessor.convert_dateformat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts the the dateformat as expected by datetime.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.fileformat.DefaultsProcessor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toolkit.fileformat.</span></span><span class="sig-name descname"><span class="pre">DefaultsProcessor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">default_value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">missing_values</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.fileformat.DefaultsProcessor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Replaces the missing values with the specified default value.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.fileformat.FileErrorLevel">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toolkit.fileformat.</span></span><span class="sig-name descname"><span class="pre">FileErrorLevel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.fileformat.FileErrorLevel" title="Permalink to this definition">¶</a></dt>
+<dd><p>An enumeration.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.fileformat.FileFormat">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toolkit.fileformat.</span></span><span class="sig-name descname"><span class="pre">FileFormat</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">columns</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">description</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.fileformat.FileFormat" title="Permalink to this definition">¶</a></dt>
+<dd><p>The specifications of a tabular file format.</p>
+<p>The FileFormat specifies the accepted columns with thier name,
+expected column name in the input file, datatype etc.</p>
+<p>The <cite>process_data</cite> method takes a DataFrame created from
+the input file and transforms into a DataFrame in the expected
+format.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.fileformat.FileFormat.from_file">
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">from_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.fileformat.FileFormat.from_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Parses the FileFormat from the specified yaml file.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.fileformat.FileFormat.process_data">
+<span class="sig-name descname"><span class="pre">process_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">df</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#toolkit.fileformat.FileFormatReport" title="toolkit.fileformat.FileFormatReport"><span class="pre">FileFormatReport</span></a></span></span><a class="headerlink" href="#toolkit.fileformat.FileFormat.process_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Process given dataframe as per the specifications of the
+this fileformat.</p>
+<p>The df is expected to have the columns with names specified
+in the column_name field of the specifications. This function
+will make sure all the required columns are present and all the
+data validations are matched.</p>
+<p>This function expects that all columns in the df to be string
+columns. This will fail if any of the columns are of numeric type.</p>
+<p>It is recommended to use the process_csv method for processing
+csv files.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.fileformat.FileFormat.process_file">
+<span class="sig-name descname"><span class="pre">process_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#toolkit.fileformat.FileFormatReport" title="toolkit.fileformat.FileFormatReport"><span class="pre">FileFormatReport</span></a></span></span><a class="headerlink" href="#toolkit.fileformat.FileFormat.process_file" title="Permalink to this definition">¶</a></dt>
+<dd><p>Process a file according the fileformat specifications.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.fileformat.FileFormat.resize">
+<span class="sig-name descname"><span class="pre">resize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">n</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">row</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.fileformat.FileFormat.resize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fills the row with empty values if the size of row is less than n.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.fileformat.FileFormat.to_yaml">
+<span class="sig-name descname"><span class="pre">to_yaml</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.fileformat.FileFormat.to_yaml" title="Permalink to this definition">¶</a></dt>
+<dd><p>Writes this file format into an YAML file.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.fileformat.FileFormatError">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toolkit.fileformat.</span></span><span class="sig-name descname"><span class="pre">FileFormatError</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">error_level</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'FileErrorLevel'</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_code</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'str'</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_message</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'str'</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">row_index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'int'</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column_name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'str'</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="s"><span class="pre">'str'</span></span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.fileformat.FileFormatError" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.fileformat.FileFormatReport">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toolkit.fileformat.</span></span><span class="sig-name descname"><span class="pre">FileFormatReport</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">status:</span> <span class="pre">~toolkit.fileformat.FileStatus</span> <span class="pre">=</span> <span class="pre">FileStatus.ACCEPTED</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">filename:</span> <span class="pre">~typing.Optional[str]</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">df:</span> <span class="pre">~typing.Optional[~pandas.core.frame.DataFrame]</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">errors:</span> <span class="pre">~typing.List[~toolkit.fileformat.FileFormatError]</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">total_rows:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.fileformat.FileFormatReport" title="Permalink to this definition">¶</a></dt>
+<dd><p>Report of processing a file using a fileformat.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="toolkit.fileformat.FileFormatReport.with_status">
+<span class="sig-name descname"><span class="pre">with_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">status</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.fileformat.FileFormatReport.with_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the status in a copy of the report and returns it.</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.fileformat.FileStatus">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toolkit.fileformat.</span></span><span class="sig-name descname"><span class="pre">FileStatus</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.fileformat.FileStatus" title="Permalink to this definition">¶</a></dt>
+<dd><p>An enumeration.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.fileformat.RegexProcessor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toolkit.fileformat.</span></span><span class="sig-name descname"><span class="pre">RegexProcessor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">regex</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.fileformat.RegexProcessor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ensures that all values in a column match the given regular expression.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.fileformat.RequiredProcessor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toolkit.fileformat.</span></span><span class="sig-name descname"><span class="pre">RequiredProcessor</span></span><a class="headerlink" href="#toolkit.fileformat.RequiredProcessor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ensures that that the column has no missing values.</p>
+<p>This must be called before converting the datatype of the column.</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="toolkit.fileformat.UniquenessProcessor">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">toolkit.fileformat.</span></span><span class="sig-name descname"><span class="pre">UniquenessProcessor</span></span><a class="headerlink" href="#toolkit.fileformat.UniquenessProcessor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ensures that all values in a column are unique.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="toolkit.fileformat.row_validator">
+<span class="sig-prename descclassname"><span class="pre">toolkit.fileformat.</span></span><span class="sig-name descname"><span class="pre">row_validator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#toolkit.fileformat.row_validator" title="Permalink to this definition">¶</a></dt>
+<dd><p>Registers a row validator with given name.</p>
+<p>Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nd">@row_validator</span><span class="p">(</span><span class="s2">&quot;something&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">validate_something</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">row</span><span class="p">,</span> <span class="n">report</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">FileFormatError</span><span class="p">]:</span>
+<span class="gp">&gt;&gt;&gt; </span>   <span class="o">...</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">File formatting</a><ul>
+<li><a class="reference internal" href="#fileformat">fileformat</a></li>
+<li><a class="reference internal" href="#toolkit.fileformat.ColumnFormat"><code class="docutils literal notranslate"><span class="pre">ColumnFormat</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.fileformat.ColumnFormat.process"><code class="docutils literal notranslate"><span class="pre">ColumnFormat.process()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#toolkit.fileformat.Datatype"><code class="docutils literal notranslate"><span class="pre">Datatype</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.fileformat.DatatypeProcessor"><code class="docutils literal notranslate"><span class="pre">DatatypeProcessor</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.fileformat.DatatypeProcessor.convert_dateformat"><code class="docutils literal notranslate"><span class="pre">DatatypeProcessor.convert_dateformat()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#toolkit.fileformat.DefaultsProcessor"><code class="docutils literal notranslate"><span class="pre">DefaultsProcessor</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.fileformat.FileErrorLevel"><code class="docutils literal notranslate"><span class="pre">FileErrorLevel</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.fileformat.FileFormat"><code class="docutils literal notranslate"><span class="pre">FileFormat</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.fileformat.FileFormat.from_file"><code class="docutils literal notranslate"><span class="pre">FileFormat.from_file()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.fileformat.FileFormat.process_data"><code class="docutils literal notranslate"><span class="pre">FileFormat.process_data()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.fileformat.FileFormat.process_file"><code class="docutils literal notranslate"><span class="pre">FileFormat.process_file()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.fileformat.FileFormat.resize"><code class="docutils literal notranslate"><span class="pre">FileFormat.resize()</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.fileformat.FileFormat.to_yaml"><code class="docutils literal notranslate"><span class="pre">FileFormat.to_yaml()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#toolkit.fileformat.FileFormatError"><code class="docutils literal notranslate"><span class="pre">FileFormatError</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.fileformat.FileFormatReport"><code class="docutils literal notranslate"><span class="pre">FileFormatReport</span></code></a><ul>
+<li><a class="reference internal" href="#toolkit.fileformat.FileFormatReport.with_status"><code class="docutils literal notranslate"><span class="pre">FileFormatReport.with_status()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#toolkit.fileformat.FileStatus"><code class="docutils literal notranslate"><span class="pre">FileStatus</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.fileformat.RegexProcessor"><code class="docutils literal notranslate"><span class="pre">RegexProcessor</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.fileformat.RequiredProcessor"><code class="docutils literal notranslate"><span class="pre">RequiredProcessor</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.fileformat.UniquenessProcessor"><code class="docutils literal notranslate"><span class="pre">UniquenessProcessor</span></code></a></li>
+<li><a class="reference internal" href="#toolkit.fileformat.row_validator"><code class="docutils literal notranslate"><span class="pre">row_validator()</span></code></a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="signals.html"
+                          title="previous chapter">Signals</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/fileformat.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="signals.html" title="Signals"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">Toolkit 20.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">File formatting</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2020, Anand.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.3.0.
+    </div>
+  </body>
+</html>
