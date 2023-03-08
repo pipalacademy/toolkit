@@ -25,11 +25,11 @@ extras_require = {
 }
 
 setup(
-    name='algoshelf-toolkit',
+    name='toolkit',
     version=__version__,
-    author='Algoshelf Team',
-    author_email='engineering@algoshelf.net',
-    description='Assorted utilities from Algoshelf',
+    author='Pipal Academy',
+    author_email='hello@pipal.in',
+    description='Assorted utilities from Pipal Academy',
     packages=find_packages(),
     include_package_data=True,
     install_requires=install_requires,
